@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f0f0f0;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-right: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #TheList {
+            margin-top: 20px;
+            display: none; /* Initially hide the list */
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="nameInput" placeholder="Enter product name">
+    <input type="text" id="priceInput" placeholder="Enter product price">
+    <button onclick="addProduct()">Add</button>
+    <button onclick="showList()">Show List</button>
+    <div id="TheList">
+        <ul>
+            <li id="item1"></li>
+            <li id="item2"></li>
+            <li id="item3"></li>
+            <li id="item4"></li>
+        </ul>
+    </div>
+    <script>
+        let currentIndex = 0;
+        const listItems = ["item1", "item2", "item3", "item4"];
+
+        function showList() {
+            const click = document.getElementById("TheList");
+            if (click.style.display === "none") {
+                click.style.display = "block";
+            } else {
+                click.style.display = "none";
+            }
+        }
+
+        function addProduct() {
+            const nameInput = document.getElementById("nameInput").value;
+            const priceInput = document.getElementById("priceInput").value;
+            
+            if (nameInput === "" || priceInput === "") {
+                alert("Please enter both product name and price");
+                return;
+            }
+
+            if (currentIndex < listItems.length) {
+                document.getElementById(listItems[currentIndex]).innerText = `${nameInput} - ${priceInput}`;
+                currentIndex++;
+                document.getElementById("nameInput").value = ""; // Clear name input field
+                document.getElementById("priceInput").value = ""; // Clear price input field
+            } else {
+                alert("All list items have been filled");
+            }
+        }
+    </script>
+</body>
+</html>

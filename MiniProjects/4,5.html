@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Page 2</title>
+</head>
+<body>
+    <h1>Number: <span id="receivedNumber"></span></h1>
+
+    <script>
+        const number = localStorage.getItem('number');
+        document.getElementById('receivedNumber').textContent = number;
+    </script>
+</body>
+</html>

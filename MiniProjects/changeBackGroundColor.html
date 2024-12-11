@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: blue;
+        }
+    </style>
+</head> <!--this click change color between blue and purple-->
+<body id="myid">
+    <h1>Hello</h1>
+    <h2 type="text" id ="myText"></h2>
+    <button type="button" onclick="toggleBackgroundColor()">Click to toggle background color</button>
+    <script src="myjs.js"></script>
+    <script>
+        function toggleBackgroundColor() {
+            var body = document.getElementById("myid");
+            var currentColor = body.style.backgroundColor;
+            
+            if (currentColor === "blue") {
+                body.style.backgroundColor = "purple";
+                document.getElementById("myText").innerText = "purple";
+            } else {
+                body.style.backgroundColor = "blue";
+                document.getElementById("myText").innerText = "blue";
+            }
+        }
+    </script>
+</body>
+</html>

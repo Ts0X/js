@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello </h1>
+    <p>Enter number between 1 to 10</p>
+    <input id="number">
+    <button type="button" onclick="myfucn()">Submit</button>
+    <p id="myid"></p>
+    <script>
+        function myfucn(){
+        let x = document.getElementById("number").value;
+            if(x < 1 || x > 10 ){
+                text="fault";
+            }else{
+                text="correct";
+            }
+            document.getElementById("myid").innerHTML = text;
+        }
+    </script>
+</body>
+</html>

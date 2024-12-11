@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Page 1</title>
+</head>
+<body>
+    <input type="number" id="numberInput" placeholder="Enter a number">
+    <button onclick="transferNumber()">Transfer Number</button>
+
+    <script>
+        function transferNumber() {
+            const number = document.getElementById('numberInput').value;
+            localStorage.setItem('number', number);
+            window.location.href = '4,5.html';
+        }
+    </script>
+</body>
+</html>
